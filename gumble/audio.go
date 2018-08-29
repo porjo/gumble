@@ -50,6 +50,9 @@ type AudioStreamEvent struct {
 // AudioBuffer is a slice of PCM audio samples.
 type AudioBuffer []int16
 
+// OpusBuffer is a slice of Opus audio frames
+type OpusBuffer []byte
+
 func (a AudioBuffer) writeAudio(client *Client, seq int64, final bool) error {
 	encoder := client.AudioEncoder
 	if encoder == nil {
@@ -79,6 +82,8 @@ type AudioPacket struct {
 	Target *VoiceTarget
 
 	AudioBuffer
+	OpusBuffer
+	OpusSamples uint32
 
 	HasPosition bool
 	X, Y, Z     float32

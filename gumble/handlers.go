@@ -132,10 +132,12 @@ func (c *Client) handleUDPTunnel(buffer []byte) error {
 		return errInvalidProtobuf
 	}
 
-	pcm, err := decoder.Decode(buffer[:audioLength], AudioMaximumFrameSize)
-	if err != nil {
-		return err
-	}
+	/*
+		pcm, err := decoder.Decode(buffer[:audioLength], AudioMaximumFrameSize)
+		if err != nil {
+			return err
+		}
+	*/
 
 	event := AudioPacket{
 		Client: c,
@@ -143,7 +145,10 @@ func (c *Client) handleUDPTunnel(buffer []byte) error {
 		Target: &VoiceTarget{
 			ID: uint32(audioTarget),
 		},
-		AudioBuffer: AudioBuffer(pcm),
+		//AudioBuffer: AudioBuffer(pcm),
+		AudioBuffer: AudioBuffer([]int16{}),
+		OpusBuffer:  buffer[:audioLength],
+		OpusSamples: AudioMaximumFrameSize,
 	}
 
 	if len(buffer)-audioLength == 3*4 {
