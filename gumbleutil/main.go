@@ -1,4 +1,4 @@
-package gumbleutil // import "layeh.com/gumble/gumbleutil"
+package gumbleutil 
 
 import (
 	"crypto/tls"
@@ -8,7 +8,7 @@ import (
 	"os"
 	"strconv"
 
-	"layeh.com/gumble/gumble"
+	"github.com/porjo/gumble/gumble"
 )
 
 // Main aids in the creation of a basic command line gumble bot. It accepts the

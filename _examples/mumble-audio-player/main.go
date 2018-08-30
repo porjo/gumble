@@ -1,4 +1,4 @@
-package main // import "layeh.com/gumble/_examples/mumble-audio-player"
+package main 
 
 import (
 	"flag"
@@ -6,10 +6,10 @@ import (
 	"os"
 	"path/filepath"
 
-	"layeh.com/gumble/gumble"
-	"layeh.com/gumble/gumbleffmpeg"
-	"layeh.com/gumble/gumbleutil"
-	_ "layeh.com/gumble/opus"
+	"github.com/porjo/gumble/gumble"
+	"github.com/porjo/gumble/gumbleffmpeg"
+	"github.com/porjo/gumble/gumbleutil"
+	_ "github.com/porjo/gumble/opus"
 )
 
 func main() {

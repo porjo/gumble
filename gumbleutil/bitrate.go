@@ -1,9 +1,9 @@
-package gumbleutil // import "layeh.com/gumble/gumbleutil"
+package gumbleutil 
 
 import (
 	"time"
 
-	"layeh.com/gumble/gumble"
+	"github.com/porjo/gumble/gumble"
 )
 
 var autoBitrate = &Listener{
